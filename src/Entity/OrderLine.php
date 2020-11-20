@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\OrderLineRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=OrderLineRepository::class)
+ * @ApiResource(
+ *     collectionOperations={},
+ *     itemOperations={"get"}
+ * )
  */
 class OrderLine
 {
