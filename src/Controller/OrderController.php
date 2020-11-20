@@ -29,7 +29,7 @@ class OrderController extends AbstractController
      */
     public function read(Order $order)
     {
-        return $this->json($order);
+        return $this->json($order,200,[],["groups"=>["order_details"]]);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\OrderLineRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=OrderLineRepository::class)
@@ -24,11 +25,13 @@ class OrderLine
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"orderline_list","orderline_details"})
      */
     private $quantity;
 
     /**
      * @ORM\ManyToOne(targetEntity=Order::class, inversedBy="orderLines")
+     * @Groups({"orderline_details"})
      */
     private $orderId;
 

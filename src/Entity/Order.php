@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\OrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -11,6 +12,10 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
  * @ORM\Table(name="`order`")
+ * @ApiResource (
+ *     collectionOperations={},
+ *     itemOperations={"GET"}
+ * )
  */
 class Order
 {
@@ -29,7 +34,7 @@ class Order
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"order_details"})
+     * @Groups({"order_details","order_list"})
      */
     private $number;
 
