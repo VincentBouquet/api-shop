@@ -10,19 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d8c0cd8-84a9-458f-be5b-0f7f206ac8a6" name="Default Changelist" comment="Initial commit">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/api-shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api-shop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="2d8c0cd8-84a9-458f-be5b-0f7f206ac8a6" name="Default Changelist" comment="Product CRUD with API Platform">
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/OrderlineController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/order/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orderline/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/OrderLine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderLine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Product_CRUD" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -161,7 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605775005539</updated>
       <workItem from="1605775006617" duration="13166000" />
-      <workItem from="1605859436057" duration="1989000" />
+      <workItem from="1605859436057" duration="14909000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605783835495</created>
@@ -170,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605783835495</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Product CRUD with API Platform">
+      <created>1605861669669</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605861669669</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +193,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Product CRUD with API Platform" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product CRUD with API Platform" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2610" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605797808908">
@@ -201,10 +205,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="274" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605775744945" />
-    <state x="2472" y="252" key="Vcs.Push.Dialog.v2" timestamp="1605783860975">
+    <state x="2472" y="252" key="Vcs.Push.Dialog.v2" timestamp="1605861685073">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="252" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605783860975" />
+    <state x="2472" y="252" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605861685073" />
     <state x="2681" y="426" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605783629265">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
