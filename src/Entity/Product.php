@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -9,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @ApiResource()
  */
 class Product
 {
@@ -76,12 +78,12 @@ class Product
         return $this;
     }
 
-    public function getReference(): ?int
+    public function getReference(): ?string
     {
         return $this->reference;
     }
 
-    public function setReference(int $reference): self
+    public function setReference(string $reference): self
     {
         $this->reference = $reference;
 
