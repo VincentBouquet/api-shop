@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\OrderLine;
 use App\Repository\OrderLineRepository;
+use App\Repository\OrderRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -25,7 +27,7 @@ class OrderlineController extends AbstractController
     /**
      * @Route ("/api/orderline", name="orderline_create", methods={"POST"})
      */
-    public function create(Request $request, SerializerInterface $serializer)
+    public function create(Request $request, SerializerInterface $serializer, DecoderInterface $decoder, OrderRepository $repository)
     {
         if (!$request->getContent()){
             return $this->json(["error" => "request content is required"], 400);
@@ -37,10 +39,15 @@ class OrderlineController extends AbstractController
             return $this->json(["message" => "Invalid json format"],400);
         }
 
+        $data = $decoder->decode($request->getContent(),"json");
+        $orderId = $data["orderId"];
+        $order = $repository->find($orderId);
+        $orderLine->setOrderId($order);
+
         $em = $this->getDoctrine()->getManager();
         $em->persist($orderLine);
         $em->flush();
-        return $this->json($orderLine,200);
+        return $this->json($orderLine,200,[],["groups"=>["orderline_details"]]);
     }
 
     /**
